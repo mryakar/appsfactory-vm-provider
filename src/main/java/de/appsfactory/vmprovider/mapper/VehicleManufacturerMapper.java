@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * Mapper class which maps vehicle manufacturer object to facto DTOs.
+ * Mapper class which maps vehicle manufacturer object to DTOs.
  *
  * @author mryakar
  */
@@ -17,10 +17,10 @@ import java.util.stream.Collectors;
 public class VehicleManufacturerMapper {
 
     /**
-     * Mapper method which creates FactorDto object from VehicleManufacturer object.
+     * Mapper method which creates VehicleManufacturerDto object from VehicleManufacturer object.
      *
      * @param vehicleManufacturer VehicleManufacturer object
-     * @return FactorDto object.
+     * @return VehicleManufacturerDto object.
      */
     public VehicleManufacturerDto toDto(VehicleManufacturer vehicleManufacturer) {
         VehicleManufacturerDto vehicleManufacturerDto = new VehicleManufacturerDto();

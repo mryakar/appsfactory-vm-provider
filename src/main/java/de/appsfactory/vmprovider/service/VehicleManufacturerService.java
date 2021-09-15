@@ -40,10 +40,10 @@ public class VehicleManufacturerService {
         if (brandName == null || factor == null) {
             throw new IllegalStateException(Constant.ERROR_MESSAGE_RELATED_INFO_NOT_PRESENT);
         }
-        if (brandName != null && brandName.length() == 0) {
+        if (brandName.length() == 0) {
             throw new IllegalStateException(Constant.ERROR_MESSAGE_EMPTY_BRAND_NAME);
         }
-        if (factor != null && factor < 0) {
+        if (factor < 0) {
             throw new IllegalStateException(Constant.ERROR_MESSAGE_NEGATIVE_FACTOR);
         }
         if (repository.existsByBrandName(brandName)) {
@@ -112,7 +112,6 @@ public class VehicleManufacturerService {
      * Delete vehicle manufacturer by brand name.
      *
      * @param brandName Vehicle manufacturer brand name.
-     * @return True if deleted successfully. False otherwise.
      */
     @Transactional
     public void delete(String brandName) {
