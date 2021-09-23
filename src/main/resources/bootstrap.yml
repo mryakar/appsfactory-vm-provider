@@ -1,18 +1,15 @@
 spring:
-  application:
-    name: vm-provider
   cloud:
     config:
       enabled: true
-      uri: http://localhost:8888
+      uri: http://config-service:8888
+      fail-fast: true
+      retry:
+        initial-interval: 1500
+        multiplier: 1.5
+        max-attempts: 25
+        max-interval: 1000
   profiles:
     active: active
-eureka:
-  instance:
-    lease-renewal-interval-in-seconds: 10
-  client:
-    registry-fetch-interval-seconds: 5
-    serviceUrl:
-      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
-    enabled: true
-    register-with-eureka: true
+  application:
+    name: vm-provider
